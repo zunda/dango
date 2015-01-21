@@ -5,7 +5,7 @@ get '/' do
 	"Hello, this is daigo-dango"
 end
 
-get '/exit' do
-	exit
+get '/quit' do
+	Sinatra::Application.quit!
 end
 
