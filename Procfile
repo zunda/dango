@@ -1,2 +1,2 @@
 web: bundle exec ruby web.rb -p $PORT
-worker: bundle exec ruby worker.rb
+worker: bundle exec ruby countdown.rb
