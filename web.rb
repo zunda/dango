@@ -1,4 +1,3 @@
-# vim: ts=3 sw=3:
 require 'sinatra'
 
 get '/' do
