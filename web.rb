@@ -2,7 +2,7 @@
 require 'sinatra'
 
 get '/' do
-	"Hello, this is daigo-dango"
+	"Hello from dango"
 end
 
 get '/quit' do
