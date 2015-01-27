@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-	"Hello from dango"
+	"Hello from dango (test branch)"
 end
 
 get '/quit' do
