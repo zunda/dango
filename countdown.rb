@@ -1,6 +1,13 @@
-puts "Hi, I am stopping"
+class IO
+	def puts_and_flush(*args)
+		puts args
+		flush
+	end
+end
+
+$stdout.puts_and_flush "Hi, I am stopping"
 10.downto(1) do |i|
-	puts "in about #{i} seconds"
+	$stdout.puts_and_flush "in about #{i} seconds"
 	sleep 1
 end
-puts "Bye"
+$stdout.puts_and_flush "Bye"
