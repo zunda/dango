@@ -2,9 +2,6 @@ require 'sinatra'
 require 'rack-timeout'
 use Rack::Timeout
 Rack::Timeout.timeout = 5
-Rack::Timeout.register_state_change_observer(:observer) do |env|
-	puts "observer: #{env['rack-timeout.info'].inspect}"
-end
 
 get '/' do
 	<<"_HTML"
