@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'rack-timeout'
 use Rack::Timeout
+Rack::Timeout.timeout = 5
 
 get '/' do
 	<<_HTML
@@ -26,13 +27,6 @@ get '/quit' do
 end
 
 get '/sleep' do
-	Rack::Timeout.timeout = 60
-	sleep 40
-	"Good morning"
-end
-
-get '/timeout' do
-	Rack::Timeout.timeout = 5
 	sleep 40
 	"Good morning"
 end
