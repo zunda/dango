@@ -3,7 +3,6 @@ require 'rack-timeout'
 use Rack::Timeout
 
 get '/' do
-	puts "Rack::Timeout.timeout: #{Rack::Timeout.timeout}"
 	<<_HTML
 <html>
 <head>
@@ -23,20 +22,17 @@ _HTML
 end
 
 get '/quit' do
-	puts "Rack::Timeout.timeout: #{Rack::Timeout.timeout}"
 	Sinatra::Application.quit!
 end
 
 get '/sleep' do
 	Rack::Timeout.timeout = 60
-	puts "Rack::Timeout.timeout: #{Rack::Timeout.timeout}"
 	sleep 40
 	"Good morning"
 end
 
 get '/timeout' do
 	Rack::Timeout.timeout = 5
-	puts "Rack::Timeout.timeout: #{Rack::Timeout.timeout}"
 	sleep 40
 	"Good morning"
 end
