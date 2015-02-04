@@ -4,7 +4,7 @@ use Rack::Timeout
 Rack::Timeout.timeout = 5
 
 get '/' do
-	<<_HTML
+	<<"_HTML"
 <html>
 <head>
 <title>dango</title>
@@ -17,6 +17,7 @@ get '/' do
 	background-position: center;
 	background-repeat: no-repeat;">
 	<h1>Hello from Dango</h1>
+	<pre>#{Rack::Utils.escape_html(env["rack-timeout.info"])}</pre>
 </body>
 </html>
 _HTML
