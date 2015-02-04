@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/heroku/rack-timeout.git
+  revision: d35f0f7e8d5ff73eb21e12c0b2e35fe76e3a7905
+  specs:
+    rack-timeout (0.2.0)
+
+GIT
   remote: git://github.com/sinatra/sinatra.git
   revision: 27d1716c7388db9f3c07d07c8b0c3c285d5caf42
   specs:
@@ -70,6 +76,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  rack-timeout!
   rails_best_practices
   sinatra!
   thin
