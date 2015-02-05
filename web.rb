@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'rack-timeout'
 use Rack::Timeout
-Rack::Timeout.timeout = 5
+Rack::Timeout.timeout = 50
 
 get '/' do
 	<<"_HTML"
