@@ -3,8 +3,7 @@ require 'rack-timeout'
 use Rack::Timeout
 Rack::Timeout.timeout = 50
 
-get '/' do
-	<<"_HTML"
+normal_response = <<"_HTML"
 <html>
 <head>
 <title>dango</title>
@@ -21,6 +20,14 @@ get '/' do
 </body>
 </html>
 _HTML
+
+get '/' do
+	normal_response
+end
+
+get '/slow' do
+	sleep 10
+	normal_response
 end
 
 get '/quit' do
