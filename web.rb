@@ -16,7 +16,6 @@ normal_response = <<"_HTML"
 	background-position: center;
 	background-repeat: no-repeat;">
 	<h1>Hello from Dango</h1>
-	<pre>#{Rack::Utils.escape_html(env["rack-timeout.info"])}</pre>
 </body>
 </html>
 _HTML
