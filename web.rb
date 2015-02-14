@@ -3,7 +3,8 @@ require 'rack-timeout'
 use Rack::Timeout
 Rack::Timeout.timeout = 50
 
-normal_response = <<"_HTML"
+def dang(info = nil)
+	r = <<"_HTML"
 <html>
 <head>
 <title>dango</title>
@@ -16,17 +17,19 @@ normal_response = <<"_HTML"
 	background-position: center;
 	background-repeat: no-repeat;">
 	<h1>Hello from Dango</h1>
-</body>
-</html>
 _HTML
+	r << "<p><pre>#{Rack::Utils.escape_html info}</pre></p>\n" if info
+	r << "</body>\n</html>\n"
+	return r
+end
 
 get '/' do
-	normal_response
+	dang("DYNO:#{ENV['DYNO'].inspect} TEST:#{ENV['TEST'].inspect}")
 end
 
 get '/slow' do
 	sleep 10
-	normal_response
+	dang("Morning!")
 end
 
 get '/quit' do
