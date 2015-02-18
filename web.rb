@@ -1,7 +1,7 @@
 require 'sinatra'
-require 'rack-timeout'
-use Rack::Timeout
-Rack::Timeout.timeout = 50
+#require 'rack-timeout'
+#use Rack::Timeout
+#Rack::Timeout.timeout = 50
 
 def dang(info = nil)
 	r = <<"_HTML"
