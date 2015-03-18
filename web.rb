@@ -24,7 +24,7 @@ _HTML
 end
 
 get '/' do
-	dango("DYNO:#{ENV['DYNO'].inspect} TEST:#{ENV['TEST'].inspect}")
+	dango("DYNO:#{ENV['DYNO']}")
 end
 
 get '/slow' do
