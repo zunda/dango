@@ -3,7 +3,7 @@ require 'sinatra'
 #use Rack::Timeout
 #Rack::Timeout.timeout = 50
 
-def dang(info = nil)
+def dango(info = nil)
 	r = <<"_HTML"
 <html>
 <head>
@@ -24,12 +24,12 @@ _HTML
 end
 
 get '/' do
-	dang("DYNO:#{ENV['DYNO'].inspect} TEST:#{ENV['TEST'].inspect}")
+	dango("DYNO:#{ENV['DYNO'].inspect} TEST:#{ENV['TEST'].inspect}")
 end
 
 get '/slow' do
 	sleep 10
-	dang("Morning!")
+	dango("Morning!")
 end
 
 get '/quit' do
