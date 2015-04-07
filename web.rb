@@ -25,7 +25,7 @@ _HTML
 end
 
 get '/' do
-	dango("DYNO:#{ENV['DYNO']}")
+	dango("DYNO:#{ENV['DYNO']} HTTP_X_FORWARDED_PROTO:#{ENV['HTTP_X_FORWARDED_PROTO']}")
 end
 
 get '/slow' do
