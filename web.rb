@@ -29,7 +29,7 @@ get '/' do
 end
 
 get '/env' do
-	dango(headers.inspect)
+	dango(request.inspect)
 end
 
 get '/slow' do
