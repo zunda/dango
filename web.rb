@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'pp'
 #require 'rack-timeout'
 #use Rack::Timeout
 #Rack::Timeout.timeout = 50
@@ -29,7 +30,7 @@ get '/' do
 end
 
 get '/env' do
-	dango(request.inspect)
+	dango(pp(request))
 end
 
 get '/slow' do
