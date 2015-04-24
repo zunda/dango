@@ -29,7 +29,7 @@ get '/' do
 end
 
 get '/env' do
-	dango(request.inspect)
+	dango(request.env.inspect)
 end
 
 get '/slow' do
