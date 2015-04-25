@@ -29,7 +29,7 @@ get '/' do
 end
 
 get '/env' do
-	dango(request.env.inspect)
+	dango(request.env.map{|k,v| "#{k}=#{v}"}.join("\n"))
 end
 
 get '/slow' do
