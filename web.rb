@@ -30,7 +30,7 @@ get '/' do
 end
 
 get '/rt' do
-	dango("Rack::Timeout.sleep_timeout:#{Rack::Timeout.sleep_timeout}")
+	dango("Rack::Timeout.service_timeout:#{Rack::Timeout.service_timeout}")
 end
 
 get '/env' do
