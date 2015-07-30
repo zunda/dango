@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'pp'
-#require 'rack-timeout'
-#use Rack::Timeout
-#Rack::Timeout.timeout = 50
+require 'rack-timeout'
+use Rack::Timeout
+Rack::Timeout.timeout = 10
 
 def dango(info = nil)
 	r = <<"_HTML"
@@ -27,6 +27,10 @@ end
 
 get '/' do
 	dango("")
+end
+
+get '/rt' do
+	dango("Rack::Timeout.sleep_timeout:#{Rack::Timeout.sleep_timeout}")
 end
 
 get '/env' do
