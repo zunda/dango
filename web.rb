@@ -1,9 +1,11 @@
-wait = 50
-$stdout.print "Sleeping for #{wait} sec..."
-$stdout.flush
-sleep wait
-$stdout.puts " done"
-$stdout.flush
+wait = 0
+if wait > 0
+	$stdout.print "Sleeping for #{wait} sec..."
+	$stdout.flush
+	sleep wait
+	$stdout.puts " done"
+	$stdout.flush
+end
 
 require 'sinatra'
 require 'pp'
