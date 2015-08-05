@@ -1,4 +1,4 @@
-wait = 60
+wait = 50
 $stdout.print "Sleeping for #{wait} sec..."
 $stdout.flush
 sleep wait
