@@ -1,12 +1,15 @@
+wait = 60
+$stdout.print "Sleeping for #{wait} sec..."
+$stdout.flush
+sleep wait
+$stdout.puts " done"
+$stdout.flush
+
 require 'sinatra'
 require 'pp'
 require 'rack-timeout'
 use Rack::Timeout
 Rack::Timeout.timeout = 10
-
-STDERR.print "Sleeping for 20 sec..."
-sleep 20
-STDERR.puts " done"
 
 def dango(info = nil)
 	r = <<"_HTML"
