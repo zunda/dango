@@ -4,6 +4,10 @@ require 'rack-timeout'
 use Rack::Timeout
 Rack::Timeout.timeout = 10
 
+STDERR.print "Sleeping for 20 sec..."
+sleep 20
+STDERR.puts " done"
+
 def dango(info = nil)
 	r = <<"_HTML"
 <html>
