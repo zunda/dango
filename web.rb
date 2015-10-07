@@ -9,9 +9,9 @@ end
 
 require 'sinatra'
 require 'pp'
-require 'rack-timeout'
-use Rack::Timeout
-Rack::Timeout.timeout = 10
+#require 'rack-timeout'
+#use Rack::Timeout
+#Rack::Timeout.timeout = 10
 
 def dango(info = nil)
 	r = <<"_HTML"
