@@ -46,6 +46,10 @@ get '/env' do
 	dango(request.env.map{|k,v| "#{k}=#{v}"}.join("\n"))
 end
 
+get '/printenv' do
+	dango(`printenv`)
+end
+
 get '/slow' do
 	sleep 10
 	dango("Morning!")
