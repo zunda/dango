@@ -9,9 +9,9 @@ end
 
 require 'sinatra'
 require 'pp'
-require 'rack-timeout'
-use Rack::Timeout
-Rack::Timeout.timeout = 10
+#require 'rack-timeout'
+#use Rack::Timeout
+#Rack::Timeout.timeout = 10
 
 def dango(info = nil)
 	r = <<"_HTML"
@@ -44,6 +44,10 @@ end
 
 get '/env' do
 	dango(request.env.map{|k,v| "#{k}=#{v}"}.join("\n"))
+end
+
+get '/printenv' do
+	dango(`printenv`)
 end
 
 get '/slow' do
