@@ -17,7 +17,7 @@ def dango(info = nil)
 	r = <<"_HTML"
 <html>
 <head>
-<title>dango</title>
+<title>dango on pipeline</title>
 <meta name="blitz" content="mu-2f62ff58-b164e0f3-99a23b43-922bd347">
 </head>
 <body style="
