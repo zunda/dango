@@ -23,16 +23,9 @@
     },
     "RACK_ENV": {
       "required": true
-    },
-    "TEST": {
-      "required": true
-    },
-    "TEST2": {
-      "required": true
     }
   },
   "addons": [
-    "ssl",
     "papertrail",
     "scheduler"
   ]
