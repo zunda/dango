@@ -35,6 +35,7 @@ _HTML
 end
 
 get '/' do
+	headers 'X-Test' => 'Hello World'
 	dango("")
 end
 
