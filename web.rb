@@ -77,7 +77,7 @@ get '/sleep' do
 	"Good morning"
 end
 
-get '/mail/ do
+get '/mail' do
   Mail.deliver do
     to 'zundan@gmail.com'
     from 'zundan@gmail.com'
