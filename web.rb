@@ -80,8 +80,9 @@ end
 get '/mail' do
   Mail.deliver do
     to 'zundan@gmail.com'
-    from 'zundan@gmail.com'
+    from 'daigo@heroku.com'
     subject 'testing send mail'
     body 'Sending email with Ruby through SendGrid!'
   end
+	dango("Sent!")
 end
