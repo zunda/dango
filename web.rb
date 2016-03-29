@@ -93,7 +93,7 @@ get '/zunda.jpg' do
 	send_file File.join(settings.public_folder, 'zunda.jpg')
 end
 
-get '/mail/ do
+get '/mail' do
   Mail.deliver do
     to 'zundan@gmail.com'
     from 'zundan@gmail.com'
