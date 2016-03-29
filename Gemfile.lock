@@ -37,6 +37,8 @@ GEM
     eventmachine (1.0.4)
     i18n (0.7.0)
     json (1.8.2)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -76,7 +78,11 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  mail
   rack-timeout!
   rails_best_practices
   sinatra!
   thin
+
+BUNDLED WITH
+   1.11.2
