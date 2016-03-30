@@ -24,7 +24,7 @@ def dango(info = nil)
 	background-color: #120d0a;
 	color: white;
 	height: 100%;
-	background-image: url(http://photos-h.ak.instagram.com/hphotos-ak-xpa1/t51.2885-15/1941230_1408222796098551_1531280107_n.jpg);
+	background-image: url(zunda.jpg);
 	background-position: center;
 	background-repeat: no-repeat;">
 	<h1>Hello from Dango</h1>
@@ -63,4 +63,8 @@ end
 get '/sleep' do
 	sleep 40
 	"Good morning"
+end
+
+get '/zunda.jpg' do
+	send_file File.join(settings.public_folder, 'zunda.jpg')
 end
