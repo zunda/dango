@@ -13,6 +13,17 @@ require 'pp'
 #use Rack::Timeout
 #Rack::Timeout.timeout = 10
 
+def redacted(str)
+	res = str.dup
+	{
+		%r|(PASSWORD=).*|i => '\1(redacted)',
+		%r|//.*:.*@| => '//(redacted):(redacted)@',
+	}.each_pair do |r, s|
+		res.gsub!(r, s)
+	end
+	return res
+end
+
 def dango(info = nil)
 	r = <<"_HTML"
 <html>
@@ -48,7 +59,7 @@ get '/env' do
 end
 
 get '/printenv' do
-	dango(`printenv`)
+	dango(redacted(`printenv`))
 end
 
 get '/slow' do
