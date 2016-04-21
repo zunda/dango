@@ -26,6 +26,7 @@ Mail.defaults do
   }
 end
 
+<<<<<<< HEAD
 def redacted(str)
 	res = str.dup
 	{
@@ -37,6 +38,8 @@ def redacted(str)
 	return res
 end
 
+=======
+>>>>>>> 40f7b7722e2ebb73e606f17f613dd2b3eccfdd2a
 def dango(info = nil)
 	r = <<"_HTML"
 <html>
