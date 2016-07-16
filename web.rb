@@ -50,6 +50,11 @@ get '/' do
 	dango("")
 end
 
+post '/' do
+  puts params.inspect
+	dango("")
+end
+
 get '/rt' do
 	dango("Rack::Timeout.service_timeout:#{Rack::Timeout.service_timeout}")
 end
