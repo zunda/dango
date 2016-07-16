@@ -51,7 +51,8 @@ get '/' do
 end
 
 post '/' do
-  puts params.inspect
+  $stderr.puts "parames:"
+  $stderr.puts params.inspect
 	dango("")
 end
 
