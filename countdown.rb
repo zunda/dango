@@ -1,3 +1,5 @@
+Interval = 60
+
 class IO
 	def puts_and_flush(*args)
 		puts args
@@ -5,7 +7,7 @@ class IO
 	end
 end
 
-$stdout.puts_and_flush "Hi, I am stopping"
-$stdout.puts_and_flush "in about 10 seconds"
-sleep 10
-$stdout.puts_and_flush "Bye"
+loop do
+	$stdout.puts_and_flush "Hi, I am repeating this in about #{Interval} seconds"
+	sleep Interval
+end
