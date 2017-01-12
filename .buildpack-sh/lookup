@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl -o - http://ifconfig.co/json
+echo
