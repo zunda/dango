@@ -1,4 +1,9 @@
 #!/bin/sh
+# $ heroku buildpacks
+# === Buildpack URLs
+# 1. https://github.com/zunda/heroku-buildpack-sh.git
+# 2. heroku/ruby
+
 
 curl -o - http://ifconfig.co/json
 echo
