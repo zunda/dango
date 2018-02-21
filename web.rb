@@ -41,7 +41,7 @@ def dango(info = nil)
 	r = <<"_HTML"
 <html>
 <head>
-<title>dango</title>
+<title>dango on pr</title>
 </head>
 <body style="
 	background-color: #120d0a;
