@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo HEROKU_PRIVATE_IP: $HEROKU_PRIVATE_IP
