@@ -1,6 +1,6 @@
 wait = ENV.fetch('BOOT_WAIT', 0).to_f
 if wait > 0
-	$stdout.print "Sleeping for #{wait} sec..."
+	$stdout.puts "Sleeping for #{wait} sec..."
 	$stdout.flush
 	sleep wait
 	$stdout.puts " done"
