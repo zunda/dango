@@ -107,3 +107,8 @@ get '/mail' do
   end
   dango("Sent!")
 end
+
+get '/close' do
+  headers 'Connection' => 'close'
+  dango("")
+end
