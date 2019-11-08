@@ -109,6 +109,6 @@ get '/mail' do
 end
 
 get '/close' do
-  headers 'Connection' => 'close'
+  response['Connection'] = 'close'
   dango("")
 end
