@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/Shopify/mail.git
+  revision: 651a59a231f34b5dc148decb80b45c6581fa71a8
+  branch: net-smtp-dependency
+  specs:
+    mail (2.8.0.edge)
+      mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -6,66 +17,83 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
-    capybara (3.32.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
+    capybara (3.37.1)
       addressable
+      matrix
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.5)
+      regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    code_analyzer (0.5.1)
+    code_analyzer (0.5.5)
       sexp_processor
     concurrent-ruby (1.1.10)
-    daemons (1.3.1)
+    daemons (1.4.1)
+    digest (3.1.0)
     erubis (2.7.0)
     eventmachine (1.2.7)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    json (2.3.0)
-    mail (2.7.1)
-      mini_mime (>= 0.1.1)
-    mini_mime (1.0.2)
+    json (2.6.2)
+    matrix (0.4.2)
+    mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.2)
-    mustermann (1.1.1)
+    minitest (5.16.3)
+    mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.13.6)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
+    net-pop (0.1.1)
+      digest
+      net-protocol
+      timeout
+    net-protocol (0.1.3)
+      timeout
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
+    nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    public_suffix (4.0.6)
+    public_suffix (5.0.0)
     racc (1.6.0)
-    rack (2.2.3.1)
-    rack-protection (2.2.0)
+    rack (2.2.4)
+    rack-protection (2.2.2)
       rack
-    rack-test (1.1.0)
-      rack (>= 1.0, < 3)
-    rack-timeout (0.6.0)
-    rails_best_practices (1.20.0)
+    rack-test (2.0.2)
+      rack (>= 1.3)
+    rack-timeout (0.6.3)
+    rails_best_practices (1.23.1)
       activesupport
-      code_analyzer (>= 0.5.1)
+      code_analyzer (~> 0.5.5)
       erubis
       i18n
       json
       require_all (~> 3.0)
       ruby-progressbar
-    regexp_parser (1.7.0)
+    regexp_parser (2.5.0)
     require_all (3.0.0)
-    ruby-progressbar (1.10.1)
+    ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
-    sexp_processor (4.14.1)
-    sinatra (2.2.0)
-      mustermann (~> 1.0)
+    sexp_processor (4.16.1)
+    sinatra (2.2.2)
+      mustermann (~> 2.0)
       rack (~> 2.2)
-      rack-protection (= 2.2.0)
+      rack-protection (= 2.2.2)
       tilt (~> 2.0)
-    thin (1.7.2)
+    strscan (3.0.4)
+    thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
       rack (>= 1, < 3)
-    tilt (2.0.10)
+    tilt (2.0.11)
+    timeout (0.3.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     xpath (3.2.0)
@@ -76,14 +104,14 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  mail
+  mail!
   rack-timeout
   rails_best_practices
   sinatra
   thin
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 3.1.2p20
 
 BUNDLED WITH
-   1.17.3
+   2.3.21
