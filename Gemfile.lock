@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/Shopify/mail.git
+  revision: 651a59a231f34b5dc148decb80b45c6581fa71a8
+  branch: net-smtp-dependency
+  specs:
+    mail (2.8.0.edge)
+      mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -21,19 +32,32 @@ GEM
       sexp_processor
     concurrent-ruby (1.1.10)
     daemons (1.4.1)
+    digest (3.1.0)
     erubis (2.7.0)
     eventmachine (1.2.7)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     json (2.6.2)
-    mail (2.7.1)
-      mini_mime (>= 0.1.1)
     matrix (0.4.2)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.16.3)
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
+    net-pop (0.1.1)
+      digest
+      net-protocol
+      timeout
+    net-protocol (0.1.3)
+      timeout
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
@@ -63,11 +87,13 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.2.2)
       tilt (~> 2.0)
+    strscan (3.0.4)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
       rack (>= 1, < 3)
     tilt (2.0.11)
+    timeout (0.3.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     xpath (3.2.0)
@@ -78,7 +104,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  mail
+  mail!
   rack-timeout
   rails_best_practices
   sinatra
