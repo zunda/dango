@@ -1,9 +1,9 @@
 {
   "name": "dango-dango",
-  "scripts": {
-  },
-  "env": {
-  },
-  "addons": [
-  ]
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
 }
