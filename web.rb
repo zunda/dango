@@ -9,22 +9,6 @@ end
 
 require 'sinatra'
 require 'pp'
-#require 'rack-timeout'
-#use Rack::Timeout
-#Rack::Timeout.timeout = 10
-
-require 'mail'
-Mail.defaults do
-  delivery_method :smtp, {
-    :address => 'smtp.sendgrid.net',
-    :port => '587',
-    :domain => 'heroku.com',
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
-end
 
 def redacted(str)
   res = str.dup
@@ -68,10 +52,6 @@ post '/' do
   dango("")
 end
 
-get '/rt' do
-  dango("Rack::Timeout.service_timeout:#{Rack::Timeout.service_timeout}")
-end
-
 get '/env' do
   dango(request.env.map{|k,v| "#{k}=#{v}"}.join("\n"))
 end
@@ -96,16 +76,6 @@ end
 
 get '/zunda.jpg' do
   send_file File.join(settings.public_folder, 'zunda.jpg')
-end
-
-get '/mail' do
-  Mail.deliver do
-    to 'zundan@gmail.com'
-    from 'daigo@heroku.com'
-    subject 'testing send mail'
-    body 'Sending email with Ruby through SendGrid!'
-  end
-  dango("Sent!")
 end
 
 get '/close' do
