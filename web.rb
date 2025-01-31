@@ -10,6 +10,8 @@ end
 require 'sinatra'
 require 'pp'
 
+set :bind, '::'
+
 def redacted(str)
   res = str.dup
   {
